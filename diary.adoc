@@ -1,0 +1,7 @@
+
+## Day 1
+
+* Initialize of the project.
+* Creation of Actuator Server (codecentric)
+* Introduction and study of Eureka (alternative choice to Zookeeper)
+
