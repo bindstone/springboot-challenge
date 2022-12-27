@@ -1,0 +1,42 @@
+version: '3'
+services:
+
+  eureka-server:
+    container_name: eureka-server
+    environment:
+      - "spring_profiles_active=docker"
+    build: ./eureka-server/
+    ports:
+      - "8890:8890"
+    networks:
+      - server-net
+
+  actuator-server:
+    container_name: actuator-server
+    depends_on:
+      - "eureka-server"
+    environment:
+      - "spring_profiles_active=docker"
+    build: ./actuator-server/
+    ports:
+      - "8891:8891"
+    networks:
+      - server-net
+
+  hello-rest-server:
+    # container_name: hello-rest-server
+    depends_on:
+      - "eureka-server"
+    environment:
+      - "spring_profiles_active=docker"
+    build: ./hello-rest-server/
+    deploy:
+      replicas: 2
+    ports:
+      - "8080-8081:8080"
+    networks:
+      - server-net
+
+networks:
+  server-net:
+    driver: bridge

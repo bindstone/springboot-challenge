@@ -5,3 +5,8 @@
 * Creation of Actuator Server (codecentric)
 * Introduction and study of Eureka (alternative choice to Zookeeper)
 
+## Day 2
+* Lessons learned: Eureka Server is not supporting Spring Native https://github.com/spring-projects-experimental/spring-native/issues/189[link]
+* Modify configuration for Actuator
+* Include Docker / Docker-Compose
+* Add a Hello World Flux Server

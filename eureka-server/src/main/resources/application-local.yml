@@ -1,0 +1,11 @@
+spring:
+  boot:
+    admin:
+      client:
+        instance:
+          service-url: http://localhost:8890
+        url: http://localhost:8891
+
+eureka:
+  instance:
+    hostname: eureka-server

@@ -1,9 +1,9 @@
 spring:
   application:
-    name: actuator-server
+    name: hello-rest-server
 
 server:
-  port: 8891
+  port: 8080
 
 eureka:
   instance:
