@@ -2,3 +2,9 @@
 
 This is a private challenge to build a Spring Boot Environnment on the latest feature and releases. It will progress day by day.
 
+http://127.0.0.1:8080/actuator-service/ (http://127.0.0.1:8891/actuator-page)
+
+http://127.0.0.1:8080/eureka-service/ (http://127.0.0.1:8890/)
+
+http://127.0.0.1:8080/hello-service/hello
+

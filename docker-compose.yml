@@ -32,8 +32,20 @@ services:
     build: ./hello-rest-server/
     deploy:
       replicas: 2
+#    ports:
+#      - "8081-8082:8081"
+    networks:
+      - server-net
+
+  gateway-server:
+    container_name: gateway-server
+    depends_on:
+      - "eureka-server"
+    environment:
+      - "spring_profiles_active=docker"
+    build: ./gateway-server/
     ports:
-      - "8080-8081:8080"
+      - "8080:8080"
     networks:
       - server-net
 

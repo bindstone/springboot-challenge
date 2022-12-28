@@ -10,3 +10,13 @@
 * Modify configuration for Actuator
 * Include Docker / Docker-Compose
 * Add a Hello World Flux Server
+
+## Day 3
+* Add Spring Cloud API Gateway
+* Defining the Rewrite Rules not as simple
+** See Actuator <base href="http://actuator-server:8891/actuator-page/">
+** See Eureka Path=/eureka/** which is not in context
+* TODO: Review Proxy functions for Web operations.
+* TODO: Security and Load Balancing
+
+

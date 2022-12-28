@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: gateway-server
+
+  jmx:
+    enabled: false
+
+  cloud:
+    gateway:
+      routes:
+        - id: hello-rest-server
+          uri: http://hello-rest-server:8081
+          predicates:
+            - Path=/hello-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: eureka-server
+          uri: http://eureka-server:8890
+          predicates:
+            - Path=/eureka-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: eureka-server-resources
+          uri: http://eureka-server:8890
+          predicates:
+            - Path=/eureka/**
+
+        - id: actuator-server
+          uri: http://actuator-server:8891
+          predicates:
+            - Path=/actuator-service
+          filters:
+            - RewritePath=/actuator-service, /actuator-page
+
+        - id: actuator-server-resources
+          uri: http://actuator-server:8891
+          predicates:
+            - Path=/actuator-page/**
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}    #needed to trigger info and endpoint update after restart
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.gateway.filter: INFO
