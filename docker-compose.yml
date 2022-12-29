@@ -6,8 +6,8 @@ services:
     environment:
       - "spring_profiles_active=docker"
     build: ./eureka-server/
-    ports:
-      - "8890:8890"
+    #    ports:
+    #      - "8890:8890"
     networks:
       - server-net
 
@@ -18,8 +18,8 @@ services:
     environment:
       - "spring_profiles_active=docker"
     build: ./actuator-server/
-    ports:
-      - "8891:8891"
+    #    ports:
+    #      - "8891:8891"
     networks:
       - server-net
 
@@ -32,8 +32,8 @@ services:
     build: ./hello-rest-server/
     deploy:
       replicas: 2
-#    ports:
-#      - "8081-8082:8081"
+    #    ports:
+    #      - "8081-8082:8081"
     networks:
       - server-net
 

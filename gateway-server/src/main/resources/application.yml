@@ -9,7 +9,7 @@ spring:
     gateway:
       routes:
         - id: hello-rest-server
-          uri: http://hello-rest-server:8081
+          uri: lb://hello-rest-server:8081
           predicates:
             - Path=/hello-service/**
           filters:
@@ -37,7 +37,9 @@ spring:
         - id: actuator-server-resources
           uri: http://actuator-server:8891
           predicates:
-            - Path=/actuator-page/**
+            - Path=/actuator-service/**
+          filters:
+            - RewritePath=/actuator-service/(?<segment>.*),/actuator-page/$\{segment}
 
 server:
   port: 8080

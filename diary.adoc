@@ -1,4 +1,3 @@
-
 ## Day 1
 
 * Initialize of the project.
@@ -6,12 +5,14 @@
 * Introduction and study of Eureka (alternative choice to Zookeeper)
 
 ## Day 2
+
 * Lessons learned: Eureka Server is not supporting Spring Native https://github.com/spring-projects-experimental/spring-native/issues/189[link]
 * Modify configuration for Actuator
 * Include Docker / Docker-Compose
 * Add a Hello World Flux Server
 
 ## Day 3
+
 * Add Spring Cloud API Gateway
 * Defining the Rewrite Rules not as simple
 ** See Actuator <base href="http://actuator-server:8891/actuator-page/">
@@ -19,4 +20,8 @@
 * TODO: Review Proxy functions for Web operations.
 * TODO: Security and Load Balancing
 
+## Day 4
 
+* Add Gatling Module for Performance / Balancing Tests
+* Activate Rest Module Balancing.
+(Simply http:// -> lb://)
