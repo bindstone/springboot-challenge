@@ -6,7 +6,7 @@ spring:
     admin:
       context-path: /actuator-page
       ui:
-        public-url: http://127.0.0.1:8080/actuator-service/
+        public-url: https://127.0.0.1:8080/actuator-service/
 
 server:
   port: 8891

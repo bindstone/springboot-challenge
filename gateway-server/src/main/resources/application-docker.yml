@@ -3,3 +3,17 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://eureka-server:8890/eureka/
+
+server:
+  ssl:
+    enabled: true
+    key-alias: bindstone
+    key-store-password: password
+    key-store: classpath:keystore/bindstone.p12
+    key-store-type: PKCS12
+
+management:
+  server:
+    port: 8892
+    ssl:
+      enabled: false

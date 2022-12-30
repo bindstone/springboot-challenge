@@ -25,3 +25,9 @@
 * Add Gatling Module for Performance / Balancing Tests
 * Activate Rest Module Balancing.
 (Simply http:// -> lb://)
+
+## Day 5
+
+* Add HTTPS Layer on Gateway
+* Modify Actuator for Gateway HTTP/HTTPS
+

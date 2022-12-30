@@ -20,7 +20,7 @@ public class HelloSimulation extends Simulation {
     ChainBuilder hello = exec(http("Home").get("/hello"));
 
     HttpProtocolBuilder httpProtocol =
-            http.baseUrl("http://127.0.0.1:8080/hello-service")
+            http.baseUrl("https://127.0.0.1:8080/hello-service")
                     .userAgentHeader(
                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0"
                     );

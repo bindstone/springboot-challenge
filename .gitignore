@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### KEYS
+/gateway-server/src/main/resources/keystore/*.jks
+/gateway-server/src/main/resources/keystore/*.p12

@@ -1,12 +1,14 @@
 spring:
   application:
     name: gateway-server
-
   jmx:
     enabled: false
 
   cloud:
     gateway:
+      httpclient:
+        ssl:
+          use-insecure-trust-manager: true
       routes:
         - id: hello-rest-server
           uri: lb://hello-rest-server:8081
