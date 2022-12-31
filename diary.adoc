@@ -31,3 +31,7 @@
 * Add HTTPS Layer on Gateway
 * Modify Actuator for Gateway HTTP/HTTPS
 
+## Day 6
+
+* Apply Security to API Gateway
+* Add  Basic Security Rules

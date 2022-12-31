@@ -1,4 +1,4 @@
-package com.example.gatewayserver;
+package com.bindstone.gatewayserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

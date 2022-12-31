@@ -21,6 +21,7 @@ public class HelloSimulation extends Simulation {
 
     HttpProtocolBuilder httpProtocol =
             http.baseUrl("https://127.0.0.1:8080/hello-service")
+                    .basicAuth("user", "user")
                     .userAgentHeader(
                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0"
                     );
