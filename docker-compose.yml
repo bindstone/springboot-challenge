@@ -23,6 +23,18 @@ services:
     networks:
       - server-net
 
+  authentication-server:
+    container_name: authentication-server
+    depends_on:
+      - "eureka-server"
+    environment:
+      - "spring_profiles_active=docker"
+    build: ./authentication-server/
+    ports:
+      - "8893:8893"
+    networks:
+      - server-net
+
   hello-rest-server:
     # container_name: hello-rest-server
     depends_on:

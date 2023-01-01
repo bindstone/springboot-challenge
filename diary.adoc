@@ -34,4 +34,11 @@
 ## Day 6
 
 * Apply Security to API Gateway
-* Add  Basic Security Rules
+* Add Basic Security Rules
+
+## Day 6
+
+* Add OAuth Authentication Server
+* Add new Spring Boot Authentication Module
+* Define Security Policies include Actuator
+* Open Points: Link Module with API Gateway
