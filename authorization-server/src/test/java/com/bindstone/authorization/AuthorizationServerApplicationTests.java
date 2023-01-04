@@ -1,10 +1,10 @@
-package com.bindstone.authentication;
+package com.bindstone.authorization;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthenticationServerApplicationTests {
+class AuthorizationServerApplicationTests {
 
 	@Test
 	void contextLoads() {

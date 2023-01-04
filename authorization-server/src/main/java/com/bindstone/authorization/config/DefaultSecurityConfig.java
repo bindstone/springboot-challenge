@@ -1,4 +1,4 @@
-package com.bindstone.authentication.config;
+package com.bindstone.authorization.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
+
 @EnableWebSecurity
 @Configuration(proxyBeanMethods = false)
 public class DefaultSecurityConfig {

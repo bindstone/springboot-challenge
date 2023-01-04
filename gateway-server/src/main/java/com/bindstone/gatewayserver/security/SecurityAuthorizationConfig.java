@@ -11,7 +11,7 @@ import org.springframework.security.web.server.util.matcher.PathPatternParserSer
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-public class SecurityAuthorisationConfig {
+public class SecurityAuthorizationConfig {
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -27,10 +27,20 @@ public class SecurityAuthorisationConfig {
     @Bean
     SecurityWebFilterChain eurekaResourceSecurity(ServerHttpSecurity http) {
          http
-         .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/eureka/**"))
-         .authorizeExchange((exchanges) -> exchanges
-         .anyExchange().permitAll()
-         );
+             .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/eureka/**"))
+             .authorizeExchange((exchanges) -> exchanges
+                    .anyExchange().permitAll()
+             );
+        return http.build();
+    }
+
+    @Bean
+    SecurityWebFilterChain authorizationSecurity(ServerHttpSecurity http) {
+        http
+            .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/authorization-service/**"))
+            .authorizeExchange((exchanges) -> exchanges
+                    .anyExchange().permitAll()
+            );
         return http.build();
     }
 
@@ -67,10 +77,10 @@ public class SecurityAuthorisationConfig {
     @Bean
     SecurityWebFilterChain actuatorLocalSecurity(ServerHttpSecurity http) {
         http
-                .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/actuator/**"))
-                .authorizeExchange((exchanges) -> exchanges
-                        .anyExchange().permitAll()
-                );
+            .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/actuator/**"))
+            .authorizeExchange((exchanges) -> exchanges
+                    .anyExchange().permitAll()
+            );
         return http.build();
     }
 

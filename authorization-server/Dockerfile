@@ -10,4 +10,4 @@ RUN gradle build
 FROM openjdk:17-alpine
 WORKDIR /opt/app
 COPY --from=build /build/build/libs /opt/app/
-ENTRYPOINT ["java","-jar", "authentication-server-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar", "authorization-server-0.0.1-SNAPSHOT.jar"]

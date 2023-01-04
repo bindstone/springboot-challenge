@@ -1,0 +1,5 @@
+### GET request with a header
+GET http://127.0.0.1:8893/gate/auth?response_type=code&client_id=test-app-id&state=dummy1234&redirect_url=http://localhost:8080
+JSESSIONID: 4305598EAE390D899124EBBA57E11A49
+
+Accept: application/json

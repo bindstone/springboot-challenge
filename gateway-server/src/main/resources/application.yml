@@ -41,6 +41,20 @@ spring:
           predicates:
             - Path=/eureka/**
 
+        - id: authorization-server
+          uri: http://authorization-server:8893
+          predicates:
+            - Path=/authorization-service
+          filters:
+            - RewritePath=/authorization-service, /gate
+
+        - id: authorization-server-resource
+          uri: http://authorization-server:8893
+          predicates:
+            - Path=/authorization-service/**
+          filters:
+            - RewritePath=/authorization-service/(?<segment>.*),/gate/$\{segment}
+
         - id: actuator-server
           uri: http://actuator-server:8891
           predicates:
@@ -82,6 +96,6 @@ management:
 
 logging:
   level:
-    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.gateway: INFO
     org.springframework.cloud.gateway.filter: INFO
   pattern.level: "trace_id=%mdc{traceId} span_id=%mdc{spanId} trace_flags=%mdc{traceFlags} %p"

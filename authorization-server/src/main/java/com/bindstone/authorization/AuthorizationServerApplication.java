@@ -1,12 +1,11 @@
-package com.bindstone.authentication;
+package com.bindstone.authorization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuthenticationServerApplication {
+public class AuthorizationServerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(AuthenticationServerApplication.class, args);
+		SpringApplication.run(AuthorizationServerApplication.class, args);
 	}
-
 }
