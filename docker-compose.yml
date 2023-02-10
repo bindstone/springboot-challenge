@@ -61,6 +61,13 @@ services:
     networks:
       - server-net
 
+  zipkin-server:
+    image: openzipkin/zipkin:2
+    # ports:
+    #   - '9411:9411'
+    networks:
+      - server-net
+
 networks:
   server-net:
     driver: bridge

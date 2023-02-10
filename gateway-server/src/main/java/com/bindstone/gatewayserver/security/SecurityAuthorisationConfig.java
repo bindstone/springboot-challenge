@@ -35,6 +35,26 @@ public class SecurityAuthorisationConfig {
     }
 
     @Bean
+    SecurityWebFilterChain zipkinSecurity(ServerHttpSecurity http) {
+        http
+                .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/zipkin-service/**"))
+                .authorizeExchange((exchanges) -> exchanges
+                        .anyExchange().permitAll()
+                );
+        return http.build();
+    }
+
+    @Bean
+    SecurityWebFilterChain zipkinResourceSecurity(ServerHttpSecurity http) {
+        http
+                .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/zipkin/**"))
+                .authorizeExchange((exchanges) -> exchanges
+                        .anyExchange().permitAll()
+                );
+        return http.build();
+    }
+
+    @Bean
     SecurityWebFilterChain actuatorSecurity(ServerHttpSecurity http) {
         http
             .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/actuator-service/**"))

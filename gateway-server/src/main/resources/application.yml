@@ -10,6 +10,18 @@ spring:
         ssl:
           use-insecure-trust-manager: true
       routes:
+        - id: zipkin-server
+          uri: http://zipkin-server:9411
+          predicates:
+            - Path=/zipkin-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: zipkin-server-resources
+          uri: http://zipkin-server:9411
+          predicates:
+            - Path=/zipkin/**
+
         - id: hello-rest-server
           uri: lb://hello-rest-server:8081
           predicates:
@@ -62,7 +74,14 @@ management:
     health:
       show-details: ALWAYS
 
+  tracing:
+    enabled: true
+    sampling.probability: 1.0
+
+    zipkin.tracing.endpoint: http://zipkin-server:9411/api/v2/spans
+
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.gateway.filter: INFO
+  pattern.level: "trace_id=%mdc{traceId} span_id=%mdc{spanId} trace_flags=%mdc{traceFlags} %p"

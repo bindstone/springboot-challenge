@@ -13,7 +13,10 @@ Current links exposed by the API Gateway:
 
 https://127.0.0.1:8080/actuator-service
 
+https://127.0.0.1:8080/zipkin-service
+
 https://127.0.0.1:8080/eureka-service
 
 https://127.0.0.1:8080/hello-service/hello
 
+image::doc/zipkin.png[]
