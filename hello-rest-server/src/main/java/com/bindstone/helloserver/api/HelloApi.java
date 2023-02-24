@@ -1,7 +1,6 @@
 package com.bindstone.helloserver.api;
 
 import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -16,7 +15,6 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @Slf4j
 public class HelloApi {
 
-    @NotNull
     private static Mono<String> getHelloWorld() {
         log.info("Request for Hello");
         return Mono.just("Hello World");
